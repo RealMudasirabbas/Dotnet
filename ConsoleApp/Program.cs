@@ -8,8 +8,10 @@ namespace Main
         static void Main(string[] args)
         {
             GuessGame GuessGameObj = new GuessGame();
-            GuessGameObj.guessGame();
-            GuessGameObj.squareOfANumber(6);
+            RandomQuestions RandomQuestions = new RandomQuestions();
+            //GuessGameObj.guessGame();
+            RandomQuestions.PowerOfANumber(6,2);
+            RandomQuestions.AddPy();
 
           
         }

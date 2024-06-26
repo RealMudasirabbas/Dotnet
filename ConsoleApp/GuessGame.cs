@@ -46,13 +46,6 @@ namespace ConsoleApp
             }
         }
 
-        public double squareOfANumber(int num)
-        {
-           int squareOfANum = Convert.ToInt32( Math.Sqrt(num));
-            Console.WriteLine(squareOfANum);
-            return squareOfANum;
-        }
-
         
     }
 }
