@@ -47,21 +47,21 @@ namespace ConsoleApp
             if (Sum == int.Parse(userInput))
             {
                 Console.WriteLine("Yes, Its an Armstrong number");
-                
+
             }
             else
             {
                 Console.WriteLine("No, It is not an Armstrong number");
-               
+
             }
             return 0;
         }
 
-        public int[] SortAnArray(int[]arr)
+        public int[] SortAnArray(int[] arr)
         {
-            for(int i = 0; i < arr.Length-1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                for (int j = 0; j < arr.Length-1-i; j++)
+                for (int j = 0; j < arr.Length - 1 - i; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
@@ -71,12 +71,66 @@ namespace ConsoleApp
                     }
                 }
             }
-
+            Console.WriteLine(string.Join(", ", arr));
 
             return arr;
 
         }
-       
+    
+
+
+
+        public void Factorial()
+        {
+            Console.WriteLine("Enter your number: ");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+                int result = 1;
+            for (int i = 1; i <= userInput; i++) { 
+                result *= i;
+            }
+            Console.WriteLine($"The factorial of this number {userInput} is: {result}");
+
+        }
+
+        public void DisplayObjProperties()
+        {
+            Dictionary<string, object> Person = new Dictionary<string, object>();
+            Person.Add("Name", "Mudasir");
+            Person.Add("Age", 20);
+            Person.Add("Education", "Fsc");
+
+            foreach(var prop in Person.Keys)
+            {
+                Console.WriteLine($"The {prop} of this Person: {Person[prop]}");
+            }
+        }
+
+        public int[] filterAnArray(int[] arr)
+        {
+            int[] result = arr.Where(num => num % 2 == 0).ToArray();
+            return result;
+        }
+
+        public int[] multipliedArray(int[] arr)
+        {
+            int[] result = arr.Select(num => num * 2).ToArray();
+            return result;
+        }
+
+        public static int ReduceArray(int[] arr)
+        {
+            int result = 0;
+            result = arr.Aggregate(0,(total,num) => total + num);
+            return result;
+        }
+     
     }
-   
+
+    
+
+    
+        
+     
 }
+   
+
