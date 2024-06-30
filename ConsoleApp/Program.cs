@@ -20,15 +20,35 @@ namespace Main
             //RandomQuestions.DisplayObjProperties();
             //var result = RandomQuestions.filterAnArray(array);
             //Console.WriteLine(string.Join(", ",result));
-           //int[] result = RandomQuestions.multipliedArray(array);
-           // Console.WriteLine(string.Join(", ", result));
-           var result = RandomQuestions.ReduceArray(array);
-            Console.WriteLine(result);
+            //int[] result = RandomQuestions.multipliedArray(array);
+            // Console.WriteLine(string.Join(", ", result));
+            //var result = RandomQuestions.ReduceArray(array);
+            // Console.WriteLine(result);
 
-            
-            
+            string fahrenheitResult = RandomQuestions.CelsiusToFahrenheit(37);
+            Console.WriteLine($"The Temperature converted from Celsius to Fahrenheit is: {fahrenheitResult}");
 
-          
+           
+            RandomQuestions.AreaAndPerimeterOfaCircle(7);
+
+           
+            RandomQuestions.SumOfArray([ 1, 0, 2, 3, 4 ]);
+
+            //RandomQuestions.MultiplyDivide();
+            //RandomQuestions.RemoveAChar();
+            //RandomQuestions.modifyStr();
+            //RandomQuestions.CheckMultiplesOfThreeAndSeven();
+            RandomQuestions.FizzBuzz();
+            
         }
+
+       
+
+
+
+
+
+
     }
 }
+

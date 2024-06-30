@@ -76,7 +76,7 @@ namespace ConsoleApp
             return arr;
 
         }
-    
+
 
 
 
@@ -84,8 +84,9 @@ namespace ConsoleApp
         {
             Console.WriteLine("Enter your number: ");
             int userInput = Convert.ToInt32(Console.ReadLine());
-                int result = 1;
-            for (int i = 1; i <= userInput; i++) { 
+            int result = 1;
+            for (int i = 1; i <= userInput; i++)
+            {
                 result *= i;
             }
             Console.WriteLine($"The factorial of this number {userInput} is: {result}");
@@ -99,7 +100,7 @@ namespace ConsoleApp
             Person.Add("Age", 20);
             Person.Add("Education", "Fsc");
 
-            foreach(var prop in Person.Keys)
+            foreach (var prop in Person.Keys)
             {
                 Console.WriteLine($"The {prop} of this Person: {Person[prop]}");
             }
@@ -120,11 +121,156 @@ namespace ConsoleApp
         public static int ReduceArray(int[] arr)
         {
             int result = 0;
-            result = arr.Aggregate(0,(total,num) => total + num);
+            result = arr.Aggregate(0, (total, num) => total + num);
             return result;
         }
-     
+
+        public static string CelsiusToFahrenheit(int celsius)
+        {
+            double fahrenheit = (9.0 / 5) * celsius + 32;
+            return fahrenheit + " F";
+        }
+
+
+        public static void AreaAndPerimeterOfaCircle(double radius)
+        {
+            double area = Math.PI * Math.Pow(radius, 2);
+            double perimeter = 2 * Math.PI * radius;
+            Console.WriteLine($"The Area of a circle and perimeter are {area} , {perimeter} respectively");
+        }
+
+        public static void SumOfArray(int[] arr)
+        {
+            int sum = arr.Sum();
+            Console.WriteLine(sum);
+        }
+        public void MultiplyDivide()
+        {
+
+            Console.Write("Enter the first number: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+
+
+            static double Multiply(double num1, double num2)
+            {
+                return num1 * num2;
+            }
+
+            static double Divide(double num1, double num2)
+            {
+                return num1 / num2;
+            }
+
+
+            Console.WriteLine($"The result of multiplication is: {Multiply(num1, num2)}");
+            Console.WriteLine($"The result of division is: {Divide(num1, num2)}");
+
+        }
+
+        public void RemoveAChar()
+        {
+            Console.Write("Enter a string: ");
+            string input = Console.ReadLine();
+
+            Console.Write("Enter a character to remove: ");
+            char charToRemove = Console.ReadLine()[0];
+
+
+            static string RemoveCharacter(string str, char character)
+            {
+                return str.Replace(character.ToString(), string.Empty);
+            }
+
+            Console.WriteLine("Here is the modified string: " + RemoveCharacter(input, charToRemove));
+        }
+
+        public void modifyStr()
+        {
+
+
+            Console.Write("Enter a string: ");
+            string input = Console.ReadLine();
+
+            static string ModifyString(string str)
+            {
+                if (str.Length < 2)
+                {
+                    return str;
+                }
+
+                char firstChar = str[0];
+                char lastChar = str[-1];
+                string middle = str.Substring(1, str.Length - 2);
+
+                return lastChar + middle + firstChar;
+            }
+
+            Console.WriteLine("Here is the modified string: " + ModifyString(input));
+        }
+
+        public void CheckMultiplesOfThreeAndSeven()
+        {
+            Console.Write("Enter a positive number: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            static void CheckMultiple(int num)
+            {
+                if (num < 0)
+                {
+                    Console.WriteLine("Please provide a positive number.");
+                }
+                else if (num % 3 == 0 && num % 7 == 0)
+                {
+                    Console.WriteLine("Yes! It is a multiple of 3 and 7.");
+                }
+                else if (num % 3 == 0)
+                {
+                    Console.WriteLine("Yes, it is a multiple of 3.");
+                }
+                else if (num % 7 == 0)
+                {
+                    Console.WriteLine("Yes, it is a multiple of 7.");
+                }
+                else
+                {
+                    Console.WriteLine("It is not a multiple of either 3 or 7.");
+                }
+            }
+
+            CheckMultiple(num);
+        }
+
+        public static void FizzBuzz()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
     }
+
+
+
+    
 
     
 
